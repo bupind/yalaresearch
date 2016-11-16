@@ -1,0 +1,32 @@
+{
+	"description" : "YalaResearch",
+	"name": "yalaresearch",
+	"type": "project",
+	"homepage": "http://yalapublishing.com",
+	"license": "MIT",
+	"support": {
+		"developer": "http://www.puncoz.com"
+	},
+	"config": {
+		"vendor-dir": "vendor"
+    },
+	"require": {
+		"php": ">=5.3.2",
+		"codeigniter/framework": "3.1.*",
+		"doctrine/orm": "^2.5",
+		// "symfony/symfony": "^2.1.*",
+		"symfony/event-dispatcher": "dev-master",
+		"gedmo/doctrine-extensions": "^2.4"
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*",
+		"kenjis/ci-phpunit-test": "^0.12.2",
+		"kenjis/codeigniter-deployer": "1.0.x@dev"
+	},
+    "autoload": {
+        "psr-0": {"": "src/"}
+    }
+}

@@ -1,0 +1,10 @@
+<?php (defined('BASEPATH')) || exit('No direct script access allowed') ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{VIEW}} view page</title>
+	</head>
+	<body>
+		<h1>Welcome to the {{VIEW}}</h1>
+	</body>
+</html>
