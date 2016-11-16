@@ -51,6 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 
+$route[$this->config->item('admin_url').'/login'] = 'auth/login';
+$route[$this->config->item('admin_url').'/logout'] = 'auth/logout';
+
 $route[$this->config->item('admin_url')] = 'dashboard';
 
 $route['404_override'] = '';
