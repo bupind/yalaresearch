@@ -28,6 +28,8 @@ class MY_Controller extends MX_Controller
         $active_templates = $this->config->item('active_template');
         $active_template_admin = $active_templates['admin'];
         $active_template_front = $active_templates['front'];
+        defined('ADMIN_TMPL') OR define('ADMIN_TMPL', $active_template_admin);
+        defined('FRONT_TMPL') OR define('FRONT_TMPL', $active_template_front);
         $admin_template_path = './templates/admin/'.$active_template_admin.'/';
         $front_template_path = './templates/front/'.$active_template_front.'/';
         if (file_exists($admin_template_path.'functions'.EXT)) {

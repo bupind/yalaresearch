@@ -109,10 +109,10 @@ class MY_Loader extends MX_Loader {
 
         $activetheme = CI::$APP->config->item('active_template');
 
-        $path = './templates/admin/'.$activetheme['admin'].'/';
+        $path = './templates/admin/';
         $this->_ci_view_paths = array($path => TRUE) + $this->_ci_view_paths;
 
-        return $this->_ci_load(['_ci_view' => $layout.EXT, '_ci_vars' => $this->_ci_object_to_array($viewData), '_ci_return' => false]); 
+        return $this->_ci_load(['_ci_view' => $activetheme['admin'].'/'.$layout.EXT, '_ci_vars' => $this->_ci_object_to_array($viewData), '_ci_return' => false]); 
     }
 
     /** Load a module view **/

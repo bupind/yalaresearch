@@ -26,7 +26,7 @@ class MY_Session extends CI_Session
         $this->set_flashdata(trim($type).'_alert', trim($text));
     }
 
-    public function get_alert($type, $text)
+    public function get_alert($type)
     {
         return $this->flashdata(trim($type).'_alert');
     }

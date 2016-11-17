@@ -1,5 +1,16 @@
 <?php
 
+function assets($uri = '', $isTemplate = false)
+{
+    $CI =& get_instance();
+    if ($isTemplate && in_array($isTemplate, ['admin', 'front'])) {
+        $template = $CI->config->item('active_template');
+        $template = 'templates'.$isTemplate.'/'.$template[$isTemplate].'/assets';
+        return $CI->config->base_url($template.'/'.$uri);
+    }
+    return $CI->config->base_url('assets/'.$uri);
+}
+
 function admin_url($uri = '', $protocol = NULL)
 {
     $CI =& get_instance();

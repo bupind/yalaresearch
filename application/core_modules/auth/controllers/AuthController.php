@@ -27,7 +27,9 @@ class AuthController extends MY_Controller
             admin_redirect('dashboard', 'refresh');
         }
 
-        $data = [];
+        $data['pageInfo'] = (object)[
+            'title' => $this->lang->line('login_module')
+        ];
         $this->load->admintheme(null, $data, 'login.index');
     }
 }
