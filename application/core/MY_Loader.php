@@ -102,4 +102,30 @@ class MY_Loader extends MX_Loader {
             CI::$APP->output->append_output(ob_get_clean());
         }
     }
+
+    public function admintheme($page, $viewData = [], $layout = 'dashboard.index')
+    {
+        if (!is_null($page)) $viewData['main_body_content'] = $this->view($page, $viewData, true);
+
+        $activetheme = CI::$APP->config->item('active_template');
+
+        $path = './templates/admin/'.$activetheme['admin'].'/';
+        $this->_ci_view_paths = array($path => TRUE) + $this->_ci_view_paths;
+
+        return $this->_ci_load(['_ci_view' => $layout.EXT, '_ci_vars' => $this->_ci_object_to_array($viewData), '_ci_return' => false]); 
+    }
+
+    /** Load a module view **/
+    public function view($view, $vars = array(), $return = FALSE)
+    {
+        list($path, $_view) = Modules::find($view, $this->_module, 'views/');
+
+        if ($path != FALSE)
+        {
+            $this->_ci_view_paths = array($path => TRUE) + $this->_ci_view_paths;
+            $view = $_view;
+        }
+
+        return $this->_ci_load(array('_ci_view' => $view, '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
+    }
 }

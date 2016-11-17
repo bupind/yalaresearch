@@ -529,7 +529,7 @@ $config['modules_locations'] = [
 ];
 
 $config['active_template'] = [
-    'admin'  => 'default',
+    'admin'  => 'homer',
     'front'  => 'default'
 ];
 

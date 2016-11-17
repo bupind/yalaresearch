@@ -11,10 +11,8 @@ class Admin_Controller extends MY_Controller
     {
         parent::__construct();
 
-        // load auth model
         $this->load->model('auth/authModel');
 
-        // check for user logged in or not
         $this->authModel->isUserLoggedIn();
     }
 }

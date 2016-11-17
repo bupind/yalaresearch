@@ -1,6 +1,6 @@
 <?php (defined('BASEPATH')) || exit('No direct script access allowed');
 
-class WelcomeController extends Admin_Controller
+class WelcomeController extends Front_Controller
 {
 	public function __construct()
 	{
