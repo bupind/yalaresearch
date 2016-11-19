@@ -1,0 +1,5 @@
+{
+	"directory" : "public/assets/bower_components",
+	"save"		: true,
+  	"save-exact": false
+}

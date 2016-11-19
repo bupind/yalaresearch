@@ -23,12 +23,18 @@ class AuthModel extends CI_Model
         }
 
         if ($this->input->is_ajax_request()) {
-            $this->output->outputJson(['status'=>'error', 'data'=>null, 'message'=>$this->lang->line('user_expired')]);
+            $this->output->json(['status'=>'error', 'data'=>null, 'message'=>$this->lang->line('user_expired')]);
         }
 
         // redirect to login page
-        $this->session->set_notification('warning', $this->lang->line('must_login'));
-        admin_redirect('login?requested_url='.uri_string(), 'refresh');
+        $this->session->set_alert('warning', $this->lang->line('must_login'));
+
+        $requested_url = explode('/', uri_string());
+        if (isset($requested_url[0]) && $requested_url[0] == $this->config->item('admin_url')) {
+            array_shift($requested_url);
+        }
+        $requested_url = empty($requested_url) ? 'dashboard' : implode('/', $requested_url);
+        admin_redirect('login?requested_url='.$requested_url, 'refresh');
     }
 }
 /* End of file '/AuthModel.php' */

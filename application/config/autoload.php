@@ -64,7 +64,8 @@ $autoload['packages'] = [
 $autoload['libraries'] = [
     'database',
     'doctrine',
-    'ion_auth'
+    'ion_auth',
+    'form_validation'
 ];
 
 /*
@@ -97,8 +98,7 @@ $autoload['drivers'] = [];
 |	$autoload['helper'] = array('url', 'file');
 */
 $autoload['helper'] = [
-    'url',
-    'html'
+    'url', 'html', 'form', 'date'
 ];
 
 /*

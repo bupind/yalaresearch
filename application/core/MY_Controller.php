@@ -16,13 +16,6 @@ class MY_Controller extends MX_Controller
 
         \CI::$APP->eventDispatcher = new EventDispatcher();
 
-        // see if the sessions table exists
-        // if not create it.
-        if ($this->config->item('sess_driver') == 'database'
-            && ! $this->db->table_exists($this->config->item('sess_save_path'))) {
-            $this->_createSessionTable();
-        }
-
         // Setup the theme
         // get the active theme settings
         $active_templates = $this->config->item('active_template');
@@ -51,40 +44,5 @@ class MY_Controller extends MX_Controller
                 }
             }
         }
-    }
-
-    private function _createSessionTable()
-    {
-        $this->load->dbforge();
-
-        $fields = [
-            'id'    => [
-                'TYPE'          => 'VARCHAR',
-                'constraint'    => '40'
-            ],
-            'ip_address'    => [
-                'TYPE'          => 'VARCHAR',
-                'constraint'    => '45'
-            ],
-            'timestamp'    => [
-                'TYPE'          => 'INT',
-                'constraint'    => 10,
-                'unsigned'      => TRUE,
-                'default'       => 0
-            ],
-            'data'    => [
-                'TYPE'          => 'BLOB'
-            ],
-        ];
-        $this->dbforge->add_field($fields);
-        $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->add_key('timestamp');
-        $this->dbforge->create_table($this->config->item('sess_save_path'), TRUE);
-
-        if ($this->config->item('sess_match_ip') === TRUE) {
-            $this->db->query("ALTER TABLE {$this->config->item('sess_save_path')} ADD CONSTRAINT {$this->config->item('sess_save_path')}_id_ip UNIQUE (id, ip_address); ");
-        }
-
-        log_message('info', 'Session Table Created in Database.');
     }
 }

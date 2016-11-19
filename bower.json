@@ -1,0 +1,30 @@
+{
+  "name": "yalaresearch",
+  "authors": [
+    "Puncoz Nepal <info@puncoz.com>"
+  ],
+  "description": "YalaResearch",
+  "main": "index.php",
+  "keywords": [
+    "research"
+  ],
+  "license": "MIT",
+  "homepage": "http://yalapublishing.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "animate.css": "^3.5.2",
+    "html5shiv": "^3.7.3",
+    "respond": "^1.4.2",
+    "iCheck": "icheck#^1.0.2",
+    "validate": "^0.11.1",
+    "jquery-validation": "jquery.validate#^1.13.0"
+  }
+}

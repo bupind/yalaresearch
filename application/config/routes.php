@@ -51,10 +51,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 
-$route[$this->config->item('admin_url').'/login'] = 'auth/login';
+$route[$this->config->item('admin_url').'/login']['get'] = 'auth/login';
+$route[$this->config->item('admin_url').'/login']['post'] = 'auth/do_login';
+$route[$this->config->item('admin_url').'/reset-password']['post'] = 'auth/do_reset_password';
 $route[$this->config->item('admin_url').'/logout'] = 'auth/logout';
 
 $route[$this->config->item('admin_url')] = 'dashboard';
+$route[$this->config->item('admin_url').'/dashboard'] = 'dashboard';
+// $route[$this->config->item('admin_url').'/(:any)'] = '$1/$2/$3/$4/';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

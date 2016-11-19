@@ -1,0 +1,135 @@
+html,
+body {
+	height: 100%;
+	background: url('../img/yala-peak.jpg') #333;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.color-line {
+	background-image: linear-gradient(to right, #15b748, #1bffa8 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%); 
+}
+
+.login-container {
+    max-width: 410px;
+    margin: 6% auto;
+    /* padding-top: 6%; */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0px 50px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.logo {
+	color: #fff;
+	font-family: 'Lily Script One', cursive;
+}.logo span{
+	color:  #8893fc;
+}
+
+.login-title h4 {
+	color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+.checkbox label, .radio label {
+    padding-left: 0; 
+}
+
+.login-footer,
+.login-footer a {
+	color: #fff !important;
+}
+
+.hpanel .panel-body {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.hpanel .alert {
+    margin-bottom: 20px; 
+    border-left: 2px solid;
+}
+
+.form-error {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin: 2px;
+}
+
+@-webkit-keyframes custom-flipInX {
+    0% {
+        -webkit-transform:  rotate3d(1, 0, 0, 90deg);
+        transform:  rotate3d(1, 0, 0, 90deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        -webkit-transform:  rotate3d(1, 0, 0, -20deg);
+        transform:  rotate3d(1, 0, 0, -20deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        -webkit-transform:  rotate3d(1, 0, 0, 10deg);
+        transform:  rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        -webkit-transform:  rotate3d(1, 0, 0, -5deg);
+        transform:  rotate3d(1, 0, 0, -5deg);
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes custom-flipInX {
+    0% {
+        -webkit-transform:  rotate3d(1, 0, 0, 90deg);
+        transform:  rotate3d(1, 0, 0, 90deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        -webkit-transform:  rotate3d(1, 0, 0, -20deg);
+        transform:  rotate3d(1, 0, 0, -20deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        -webkit-transform:  rotate3d(1, 0, 0, 10deg);
+        transform:  rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        -webkit-transform:  rotate3d(1, 0, 0, -5deg);
+        transform:  rotate3d(1, 0, 0, -5deg);
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.custom-flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: custom-flipInX;
+    animation-name: custom-flipInX;
+}
