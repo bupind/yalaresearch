@@ -29,12 +29,6 @@ $ php bin/install.php translations 3.1.0
 $ php vendor/kenjis/ci-phpunit-test/install.php
 ```
 
-### Unit Testing:
-```
-$ php vendor/kenjis/ci-phpunit-test/install.php
-```
-
-
 ## Demo Link
 
 * [yalaresearch.com](http://yalaresearch.com/)
