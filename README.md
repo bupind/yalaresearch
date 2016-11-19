@@ -14,10 +14,8 @@ This is a CMS developed for YalaResearch.com, a online research database, build 
 1. Download / clone the repo
 2. composer install
 3. bower install
-```
 4. Database Migration
-```
-php public/index.php matches do:migration
+ $ php public/index.php matches do:migration
 ```
 
 ## Additional Library Initialization
