@@ -5,6 +5,7 @@
         $("#form-title").html('PASSWORD RESET');
         $("#loginForm").hide();
         $("#password-reset").show();
+        $("#email").focus();
     });
 
     $(document).off("click", "#login-link").on("click", "#login-link", function(event) {
@@ -12,6 +13,7 @@
         $("#form-title").html('ADMIN LOGIN');
         $("#password-reset").hide();
         $("#loginForm").show();
+        $("#identity").focus();
     });
 
     // Validation

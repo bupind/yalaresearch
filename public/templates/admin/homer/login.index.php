@@ -18,7 +18,7 @@
                 
                 <div class="text-center m-b-md login-title">
                     <h1 class="logo">Yala<span>Research</span></h1>
-                    <h4 id="form-title">ADMIN LOGIN</h4>
+                    <h4 id="form-title"><?=($isForgetPassword ? 'PASSWORD RESET' : 'ADMIN LOGIN')?></h4>
                 </div>
 
                 <div class="hpanel">
@@ -31,7 +31,9 @@
                             'class' => 'loginForm animated custom-flipInX',
                             'role'  => 'form',
                             'name'  => 'loginForm',
-                            'id'    => 'loginForm'
+                            'id'    => 'loginForm',
+                            'style' => 'display:'.($isForgetPassword ? 'none' : 'block')
+
                         ];
                         $action = admin_url('login');
                         $hidden = array('requested_url'=>$requested_url);
@@ -39,7 +41,7 @@
                         ?>
 
                             <div class="form-group">
-                                <input type="text" placeholder="username" title="Please enter you username" required="" value="" name="identity" id="identity" class="form-control">
+                                <input type="text" autofocus="" placeholder="username" title="Please enter you username" required="" value="" name="identity" id="identity" class="form-control">
                             </div>
 
                             <div class="form-group">
@@ -65,7 +67,7 @@
                             'role'  => 'form',
                             'name'  => 'password-reset',
                             'id'    => 'password-reset',
-                            'style' => 'display:none'
+                            'style' => 'display:'.($isForgetPassword ? 'block' : 'none')
                         ];
                         $action = admin_url('reset-password');
                         echo form_open($action, $attributes, $hidden);
@@ -74,7 +76,7 @@
                             <p class="help-block text-muted small">Please fill in your registered email address, we will send you instructions on how to reset your password.</p>
                             
                             <div class="form-group">
-                                <input type="email" placeholder="email address" title="Please enter you registered email address"  value="" name="email" id="email" class="form-control">
+                                <input type="email" autofocus="" placeholder="email address" title="Please enter your registered email address"  value="" name="email" id="email" class="form-control">
                             </div>
 
                             <input type="submit" class="btn btn-info btn-block" value="Reset">

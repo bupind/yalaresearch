@@ -10,5 +10,7 @@ class Front_Controller extends MY_Controller
     function __construct()
     {
         parent::__construct();
+
+        $this->benchmark->mark('front_controller_end');
     }
 }

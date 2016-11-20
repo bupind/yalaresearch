@@ -53,6 +53,7 @@ $route['default_controller'] = 'welcome';
 
 $route[$this->config->item('admin_url').'/login']['get'] = 'auth/login';
 $route[$this->config->item('admin_url').'/login']['post'] = 'auth/do_login';
+$route[$this->config->item('admin_url').'/reset-password']['get'] = 'auth/login/forget-password';
 $route[$this->config->item('admin_url').'/reset-password']['post'] = 'auth/do_reset_password';
 $route[$this->config->item('admin_url').'/logout'] = 'auth/logout';
 

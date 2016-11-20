@@ -5,11 +5,15 @@ class DashboardController extends Admin_Controller
 	public function __construct()
 	{
 		parent::__construct();
+
+        self::$viewData['pageInfo'] = (object)[
+            'title' => $this->lang->line('dashboard_module')
+        ];
 	}
 	
 	public function index()
 	{
-		echo 'dashboard';
+		$this->load->admintheme('dashboard', self::$viewData);
 	}
 }
 /* End of file 'DashboardController.php' */

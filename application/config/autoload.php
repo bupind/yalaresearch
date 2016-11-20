@@ -64,8 +64,8 @@ $autoload['packages'] = [
 $autoload['libraries'] = [
     'database',
     'doctrine',
-    'ion_auth',
-    'form_validation'
+    'form_validation',
+    'authentication'
 ];
 
 /*

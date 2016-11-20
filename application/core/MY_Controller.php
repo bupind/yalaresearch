@@ -16,6 +16,11 @@ class MY_Controller extends MX_Controller
 
         \CI::$APP->eventDispatcher = new EventDispatcher();
 
+        $db_time_set    = $this->config->item('db_time_set');
+        $time_zone      = $this->config->item('default_timezone');
+        $this->db->query($db_time_set);
+        date_default_timezone_set($time_zone);
+
         // Setup the theme
         // get the active theme settings
         $active_templates = $this->config->item('active_template');
@@ -44,5 +49,7 @@ class MY_Controller extends MX_Controller
                 }
             }
         }
+
+        $this->benchmark->mark('my_controller_end');
     }
 }

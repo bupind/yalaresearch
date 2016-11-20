@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/freelancing/yalaresearch/public/';
+$config['base_url'] = 'http://' . $_SERVER['SERVER_NAME'] . '/'. (ENVIRONMENT !== 'production' ? 'freelancing/yalaresearch/public/' : '');
 
 /*
 |--------------------------------------------------------------------------
@@ -480,6 +480,8 @@ $config['compress_output'] = FALSE;
 |
 */
 $config['time_reference'] = 'local';
+$config['db_time_set'] = "SET time_zone = '+5:45';";
+$config['default_timezone'] = "Asia/Kathmandu";
 
 /*
 |--------------------------------------------------------------------------

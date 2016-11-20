@@ -5,27 +5,16 @@ class AuthController extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
-
-        $this->load->model('authModel');
-	}
-	
-	public function index()
-	{
-		if (! $this->authModel->isUserLoggedIn(false)) {
-            admin_redirect('login', 'refresh');
-        } else if (! $this->ion_auth->is_admin()) {
-            show_error($this->lang->line('admin_only'));
-        } else {
-            admin_redirect('dashboard', 'refresh');
-        }
 	}
 
-    public function login()
+    public function login($isForgetPassword = null)
     {
-        if ($this->authModel->isUserLoggedIn(FALSE)) {
-            // if loggged in, redirect them to the dashboard page
+        // if loggged in, redirect them to the dashboard page
+        if ($this->authentication->isUserLoggedIn()) {
             admin_redirect('dashboard', 'refresh');
         }
+
+        $data['isForgetPassword'] = (!is_null($isForgetPassword) && $isForgetPassword == 'forget-password') ? true : false;
 
         $data['pageInfo'] = (object)[
             'title' => $this->lang->line('login_module')
@@ -39,12 +28,12 @@ class AuthController extends MY_Controller
 
     public function logout()
     {
-        if($this->authModel->isUserLoggedIn(FALSE)) {
+        if($this->authentication->isUserLoggedIn()) {
             // log the user out
-            $this->ion_auth->logout();
+            $this->authentication->logout();
 
             // redirect them to the login page
-            $this->session->set_alert('success', $this->ion_auth->messages());
+            $this->session->set_alert('success', $this->authentication->messages());
         } else {
             $this->session->set_alert('warning', $this->lang->line('must_login'));
         }
@@ -75,8 +64,8 @@ class AuthController extends MY_Controller
                 $identity = $this->input->post('identity');
                 $password = $this->input->post('password');
 
-                if (!$this->authModel->isUserLoggedIn(FALSE) && $this->ion_auth->login($identity, $password, $remember) === false) {
-                    $error = $this->ion_auth->errors();
+                if (!$this->authentication->isUserLoggedIn() && $this->authentication->login($identity, $password, $remember) === false) {
+                    $error = $this->authentication->errors();
                     $error = empty($error) ? $this->lang->line('invalid_login') : $error;
                     throw new Exception($error);
                 }
