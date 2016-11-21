@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://' . $_SERVER['SERVER_NAME'] . '/'. (ENVIRONMENT !== 'production' ? 'freelancing/yalaresearch/public/' : '');
+$config['base_url'] = (ENVIRONMENT !== 'production' ? 'http://localhost/freelancing/yalaresearch/public/' : '');
 
 /*
 |--------------------------------------------------------------------------
@@ -536,3 +536,7 @@ $config['active_template'] = [
 ];
 
 $config['admin_url'] = 'admin';
+
+$config['file_upload_dir_user'] = [
+    'profile_pics' => './uploads/'
+];

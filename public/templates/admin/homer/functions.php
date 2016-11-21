@@ -7,6 +7,42 @@ if (!function_exists('breadcrumbConfig')) {
     }
 }
 
+if (!function_exists('breadcrumbOutput')) {
+    function breadcrumbOutput()
+    {
+        return get_instance()->breadcrumb->output();
+    }
+}
+
+if (!function_exists('getUser')) {
+    function getUser()
+    {
+        return get_instance()->authentication->getUser();
+    }
+}
+
+if (!function_exists('getFullName')) {
+    function getFullName($user)
+    {
+        trim($user->name_prefix.' '
+            .$user->first_name.' '
+            .$user->middle_name.' '
+            .$user->last_name.' '
+            .$user->name_suffix);
+    }
+}
+
+if (!function_exists('userProfilePics')) {
+    function userProfilePics($user)
+    {
+        $pics_dir = get_instance()->authentication->getUploadDir('profile_pics');
+        if (empty($user->profile_pic)) {
+            return strtolower($user->gender) == 'female' ? assets('custom/img/female-blank.jpg', 'admin') : assets('custom/img/male-blank.png', 'admin');
+        }
+        return assets($pics_dir.$user->profile_pic);
+    }
+}
+
 if (!function_exists('alert')) {
     function alert()
     {

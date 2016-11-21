@@ -20,6 +20,48 @@
 
         <!-- Navigation -->
         <?php $this->load->view(ADMIN_TMPL.'/partials/dashboard.navigation.php', $viewData) ?>
+    
+        <!-- Main Wrapper -->
+        <div id="wrapper">
+
+            <!-- Page Content Header -->
+            <div class="small-header transition animated fadeIn">
+                <div class="hpanel">
+                    <div class="panel-body">
+
+                        <!-- BreadCrumb -->
+                        <div id="hbreadcrumb" class="pull-right">
+                            <?=breadcrumbOutput()?>
+                        </div>
+
+                        <!-- Title -->
+                        <h2 class="font-light m-b-xs">
+                            <?=$pageDetail->title?>
+                        </h2>
+                        <small><?=$pageDetail->subTitle?></small>
+                    
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Content Header -->
+
+            <!-- Page Content -->
+            <div class="content animate-panel">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <?=$main_body_content?>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Content -->
+
+        </div>
+        <!-- Main Wrapper -->
+
+        <!-- Footer-->
+        <?php $this->load->view(ADMIN_TMPL.'/partials/dashboard.footer.php', $viewData) ?>
     </div>
 
     <!--

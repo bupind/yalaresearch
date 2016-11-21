@@ -9,7 +9,7 @@
         <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
         
         <div class="small-logo">
-            <span class="text-primary logo-dark">Yala<span>Research</span>
+            <span class="text-primary logo-dark">Yala<span>Research</span></span>
         </div>
         
 

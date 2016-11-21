@@ -1,10 +1,7 @@
-<?php (defined('BASEPATH')) || exit('No direct script access allowed') ?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>/dashboard.php view page</title>
-	</head>
-	<body>
-		<h1>Welcome to the /dashboard.php</h1>
-	</body>
-</html>
+<div class="hpanel">
+    <div class="panel-body">
+        
+        <h1 class="text-center">Welcome to the YalaResearch Admin Dashboard!!!</h1>
+        
+    </div>
+</div>

@@ -64,8 +64,7 @@ $autoload['packages'] = [
 $autoload['libraries'] = [
     'database',
     'doctrine',
-    'form_validation',
-    'authentication'
+    'form_validation'
 ];
 
 /*

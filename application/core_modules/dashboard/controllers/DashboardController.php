@@ -13,6 +13,10 @@ class DashboardController extends Admin_Controller
 	
 	public function index()
 	{
+        self::$viewData['pageDetail'] = (object)[
+            'title'     => 'Dashboard',
+            'subTitle'  => 'Dashboard page'
+        ];
 		$this->load->admintheme('dashboard', self::$viewData);
 	}
 }

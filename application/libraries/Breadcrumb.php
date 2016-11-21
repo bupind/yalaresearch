@@ -44,7 +44,11 @@ class Breadcrumb
             return '';
         }
 
-        return implode('/', $this->breadcrumbs);
+        $breadcrumbs = '';
+        foreach ($this->breadcrumbs as $breadcrumb) {
+            $breadcrumbs .= $breadcrumb['title'];
+        }
+        return $breadcrumbs;
     }
 }
 /* End of file Breadcrumb.php */

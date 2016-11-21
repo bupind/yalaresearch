@@ -53,8 +53,19 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-$dev_host = ['localhost'];
-define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : (in_array($_SERVER['HTTP_HOST'], $dev_host) ? 'development' : 'production'));
+if (!defined('STDIN'))
+{
+	$dev_host = ['localhost'];
+	if (isset($_SERVER['CI_ENV'])) {
+		define('ENVIRONMENT', $_SERVER['CI_ENV']);
+	} else if(in_array($_SERVER['HTTP_HOST'], $dev_host)){
+		define('ENVIRONMENT', 'development');
+	} else{
+		define('ENVIRONMENT', 'production');
+	}
+}else{
+	define('ENVIRONMENT', 'development');
+}
 
 /*
  *---------------------------------------------------------------

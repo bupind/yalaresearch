@@ -13,6 +13,8 @@ class Admin_Controller extends MY_Controller
     {
         parent::__construct();
 
+        $this->load->library('authentication');
+
         if (!$this->authentication->isUserLoggedIn()) {
             if (!$this->input->is_ajax_request()) {
                 // redirect to login page
