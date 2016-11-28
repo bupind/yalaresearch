@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = (ENVIRONMENT !== 'production' ? 'http://localhost/freelancing/yalaresearch/public/' : '');
+$config['base_url'] = (ENVIRONMENT !== 'production' ? 'http://localhost:84/yalaresearch/public/' : '');
 
 /*
 |--------------------------------------------------------------------------

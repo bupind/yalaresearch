@@ -58,7 +58,7 @@ if (!defined('STDIN'))
 	$dev_host = ['localhost'];
 	if (isset($_SERVER['CI_ENV'])) {
 		define('ENVIRONMENT', $_SERVER['CI_ENV']);
-	} else if(in_array($_SERVER['HTTP_HOST'], $dev_host)){
+	} else if(in_array($_SERVER['SERVER_NAME'], $dev_host)){
 		define('ENVIRONMENT', 'development');
 	} else{
 		define('ENVIRONMENT', 'production');
